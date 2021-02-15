@@ -1,0 +1,13 @@
+<mat-card class="result-card">
+    <mat-card-subtitle>{{item.url}}</mat-card-subtitle>
+    <mat-card-title><a href="{{item.url}}">{{item.title}}</a></mat-card-title>
+    <mat-card-content>
+        <p>{{item.description}}</p>
+        <div>
+            <mat-chip-list aria-label="keyword selection">
+                <mat-chip *ngFor="let keyword of item.keywords" [routerLink]="['/results']" [queryParams]="{k:keyword.keyword}">{{keyword.keyword}}</mat-chip>
+            </mat-chip-list>
+        </div>
+    </mat-card-content>
+
+</mat-card>

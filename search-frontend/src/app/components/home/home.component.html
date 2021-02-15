@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="grid-container">
+        <div class="grid-item item1">
+            <div class="img-container">
+                <img src="assets/images/search.png" width="128">
+            </div>
+        </div>
+        <div class="grid-item item2">
+            <app-search-bar [enteredKeyword]="enteredKeyword"></app-search-bar>
+        </div>
+        <div class="grid-item item3">
+            <div class="button-wrapper">
+                <button mat-stroked-button (click)="onSearchClick()">Search</button>
+                <button mat-stroked-button (click)="onClearClick()">Clear</button>
+            </div>
+        </div>
+    </div>
+</div>

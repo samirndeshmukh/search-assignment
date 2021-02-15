@@ -1,0 +1,16 @@
+<div class="container">
+    <mat-card class="result-card">
+        <mat-card-title>Error</mat-card-title>
+        <mat-card-content>
+            <p>
+                Code: {{errCode}}
+            </p>
+            <p>
+                Message: {{errMsg}}
+            </p>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-raised-button color="primary" (click)="redirectToHome()">Home</button>
+        </mat-card-actions>
+    </mat-card>
+</div>

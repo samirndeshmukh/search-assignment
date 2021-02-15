@@ -1,0 +1,14 @@
+<form class="search-form">
+      <input type="text"
+             aria-label="Search"
+             matInput
+             [formControl]="searchFormControl"
+             [matAutocomplete]="auto"
+             class="search-full-width"
+             [maxlength]="2000">
+      <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+        <mat-option *ngFor="let option of options | async" [value]="option">
+          {{option}}
+        </mat-option>
+      </mat-autocomplete>
+</form>

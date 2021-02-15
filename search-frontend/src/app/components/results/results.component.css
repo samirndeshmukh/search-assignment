@@ -1,0 +1,26 @@
+.result-container{
+    display: flexbox;
+    margin:20px;
+    height: 100vh;
+}
+
+.search-full-width{
+    width: 35vw;
+    border-radius: 10px;
+    height: 25px;
+    border-color: lightgray;
+    border-width: 0.5px;
+}
+
+.mat-paginator-wrapper{
+    width: 65vw !important;
+}
+
+.item-container{
+    padding-top: 10px;
+    margin: 25px;
+}
+
+.result-card{
+    max-width: 65vw;
+}

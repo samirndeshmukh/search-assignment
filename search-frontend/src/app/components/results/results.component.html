@@ -1,0 +1,39 @@
+<div class="result-container">
+    <div class="item-container">
+        <div style="position: relative;float: left;">
+            <app-search-bar [enteredKeyword]="enteredKeyword"></app-search-bar>
+        </div>
+        <div style="position: relative;float:left;bottom: 7px;"><button mat-icon-button aria-label="Search" (click)="onSearchClick()">
+                <mat-icon>search</mat-icon>
+            </button></div>
+    </div>
+    <div *ngIf="!result.empty; else noResult">
+        <div class="item-container">
+            <div *ngFor="let item of result.items">
+                <app-result-item [item]="item"></app-result-item>
+                <br>
+            </div>
+            
+        </div>
+        <div class="item-container mat-paginator-wrapper">
+            <mat-paginator [length]="result.totalRecords" 
+            [pageSize]="result.pageSize" 
+            [pageSizeOptions]="[5, 10, 25, 100]"
+            [pageIndex]="result.pageNumber"
+            (page)="onPageChange($event)"></mat-paginator>
+        </div>
+    </div>
+
+    <ng-template #noResult>
+        <div class="item-container">
+        <mat-card class="result-card">
+            <mat-card-title>No Result Found</mat-card-title>
+            <mat-card-content>
+                <p>
+                  Please use different keyword to search.
+                </p>
+              </mat-card-content>
+        </mat-card></div>
+    </ng-template>
+    
+</div>

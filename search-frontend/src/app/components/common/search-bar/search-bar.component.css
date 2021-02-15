@@ -1,0 +1,12 @@
+.search-full-width{
+    width:35vw;
+    border: 1px lightgray;
+    border-style: inset;
+    border-radius: 10px;
+    height: 25px;
+    border-width: 0.5px;
+}
+
+input{
+    padding-left:10px;
+}

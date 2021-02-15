@@ -1,0 +1,11 @@
+.result-card{
+    max-width: 65vw;
+}
+
+a{
+    text-decoration: auto;
+}
+
+a:hover{
+    text-decoration: underline;
+}
