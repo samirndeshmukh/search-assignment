@@ -1,4 +1,5 @@
 # search-assignment
+Demo search application using `angular`,`java`,`springboot`.
 
 ## search-backend
   CORS enabled for `https://localhost:4200` by default.In order to change the setting, change the cors.allowOrigin property in `application.properties`.
