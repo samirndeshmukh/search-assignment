@@ -1,7 +1,7 @@
 # search-assignment
 Demo search application using `angular`,`java`,`springboot`,`hsql`.
   
-Search is based on keyword entered by user in the search bar * *i.e; like %keyword%
+Search is based on keyword entered by user in the search bar * * i.e; like %keyword%
 
 ## search-service
   CORS origin value is configured in `application.properties` file with key `cors.allowOrigin`. Default value `http://localhost:4200`.
