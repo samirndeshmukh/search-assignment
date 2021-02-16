@@ -1,7 +1,7 @@
 # search-assignment
-Demo search application using `angular`,`java`,`springboot`.
+Demo search application using `angular`,`java`,`springboot`,`hsql`.
 
-## search-backend
+## search-service
   CORS enabled for `https://localhost:4200` by default.In order to change the setting, change the cors.allowOrigin property in `application.properties`.
 
 ## search-frontend
