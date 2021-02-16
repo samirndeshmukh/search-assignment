@@ -3,7 +3,6 @@
  */
 package com.assignment.search.service.api;
 
-import java.util.List;
 import java.util.Set;
 
 /**

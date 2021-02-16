@@ -3,8 +3,8 @@
  */
 package com.assignment.search.service;
 
+import java.util.LinkedHashSet;
 import java.util.Set;
-import java.util.stream.Collectors;
 
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
@@ -33,8 +33,10 @@ public class KeywordServiceImpl implements KeywordService {
 	public Set<String> getTopMatchingKeywords(String entry) {
 		log.info("Service call to find matching keyword for {}",entry);
 		PageRequest pageable = PageRequest.of(0, 10, Sort.by("keyword"));
-		return this.keywordRepo.findDistinctByKeywordStartsWithIgnoreCase(entry, pageable).getContent().stream().map(k -> k.getKeyword())
-				.collect(Collectors.toSet());
+		LinkedHashSet<String> keywords=new LinkedHashSet<>();
+		this.keywordRepo.findByKeywordStartsWithIgnoreCase(entry, pageable)
+				.getContent().stream().map(k -> k.getKeyword()).forEach(e->keywords.add(e));
+		return keywords;
 	}
 
 }

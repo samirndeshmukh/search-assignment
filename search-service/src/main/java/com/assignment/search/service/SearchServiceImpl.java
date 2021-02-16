@@ -33,7 +33,8 @@ public class SearchServiceImpl implements SearchService {
 	@Override
 	public Result search(String keyword, Pageable pageable) {
 		log.info("Searching items for keyword {}",keyword);
-		Page<Item> pageItem=this.itemRepository.findByKeywords_keywordIgnoreCase(keyword,pageable);
+		String likeKeyword="%"+keyword+"%";
+		Page<Item> pageItem=this.itemRepository.findByKeywords_keywordLikeIgnoreCaseOrderByTitle(likeKeyword,pageable);
 		Result result=new Result();
 		result.setKeyword(keyword);
 		result.setPageNumber(pageable.getPageNumber());
@@ -42,5 +43,5 @@ public class SearchServiceImpl implements SearchService {
 		result.setTotalRecords(pageItem.getTotalElements());
 		return result;
 	}
-
+	
 }

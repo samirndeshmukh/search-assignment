@@ -17,7 +17,6 @@ import com.assignment.search.domain.Keyword;
 @Repository
 public interface KeywordRepository extends JpaRepository<Keyword, Long> {
 
-	Page<Keyword> findDistinctByKeywordStartsWithIgnoreCase(String entry,Pageable pageable);
-	
-	Page<Keyword> findAllByKeywordIgnoreCase(String keyword,Pageable pageable);
+	Page<Keyword> findByKeywordStartsWithIgnoreCase(String entry,Pageable pageable);
+
 }

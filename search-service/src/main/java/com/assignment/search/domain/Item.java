@@ -3,9 +3,11 @@
  */
 package com.assignment.search.domain;
 
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
@@ -29,10 +31,10 @@ public class Item {
 
 	private String url;
 
-	@ManyToMany
-	@JoinTable(name = "item_keywords", joinColumns = { @JoinColumn(name = "keywords_id") }, inverseJoinColumns = {
-			@JoinColumn(name = "items_id") })
-	private List<Keyword> keywords;
+	@ManyToMany(fetch = FetchType.EAGER)
+	@JoinTable(name = "item_keywords", joinColumns = { @JoinColumn(name = "items_id") }, inverseJoinColumns = {
+			@JoinColumn(name = "keywords_id") })
+	private Set<Keyword> keywords = new HashSet<>();
 
 	/**
 	 * @return the id
@@ -93,14 +95,14 @@ public class Item {
 	/**
 	 * @return the keywords
 	 */
-	public List<Keyword> getKeywords() {
+	public Set<Keyword> getKeywords() {
 		return keywords;
 	}
 
 	/**
 	 * @param keywords the keywords to set
 	 */
-	public void setKeywords(List<Keyword> keywords) {
+	public void setKeywords(Set<Keyword> keywords) {
 		this.keywords = keywords;
 	}
 

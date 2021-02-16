@@ -16,6 +16,9 @@ export class ErrorComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRoute.queryParams.subscribe(params=>{
       this.errMsg=params["msg"];
+      if(!this.errMsg){
+        this.errMsg='Unknown Error. Please check connection to service.';
+      }
       this.errCode=params["msgCode"];
     });
   }

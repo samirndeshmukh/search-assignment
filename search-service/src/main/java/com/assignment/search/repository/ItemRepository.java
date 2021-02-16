@@ -16,6 +16,7 @@ import com.assignment.search.domain.Item;
  */
 @Repository
 public interface ItemRepository extends JpaRepository<Item, Long> {
-	
-	Page<Item> findByKeywords_keywordIgnoreCase(String keyword, Pageable pageable);
+
+	Page<Item> findByKeywords_keywordLikeIgnoreCaseOrderByTitle(String keyword, Pageable pageable);
+
 }
