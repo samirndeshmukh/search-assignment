@@ -34,7 +34,7 @@ public class SearchServiceImpl implements SearchService {
 	public Result search(String keyword, Pageable pageable) {
 		log.info("Searching items for keyword {}",keyword);
 		String likeKeyword="%"+keyword+"%";
-		Page<Item> pageItem=this.itemRepository.findByKeywords_keywordLikeIgnoreCaseOrderByTitle(likeKeyword,pageable);
+		Page<Item> pageItem=this.itemRepository.findDistinctByKeywords_keywordLikeIgnoreCaseOrderByTitle(likeKeyword,pageable);
 		Result result=new Result();
 		result.setKeyword(keyword);
 		result.setPageNumber(pageable.getPageNumber());
