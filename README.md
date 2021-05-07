@@ -1,4 +1,4 @@
-# search-assignment
+# search-app
 Demo search application using `angular`,`java`,`springboot`,`hsql`.
   
 Search is based on keyword entered by user in the search bar *i.e; like %keyword%*
